@@ -1,0 +1,10 @@
+syntax = "proto2";
+package protobuf;
+
+option java_package = "com.priva.tango.test.serialize.proto";
+option java_outer_classname = "SampleProbuf"; 
+
+message  RequestMsg {
+    required int32 id = 1;
+	required string name = 2;
+}

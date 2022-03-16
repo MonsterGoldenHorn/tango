@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.priva.tango.dao.ChTSinggerInfoMapper">
+<!-- 二级缓存 -->
+<cache type="com.priva.tango.redis.mybatis.MybatisCache"  
+	eviction="LRU"  
+	flushInterval="6000000"  
+	size="1024"  
+	readOnly="false"  />
+  <resultMap id="BaseResultMap" type="com.priva.tango.entry.ChTSinggerInfo">
+    <id column="SINGGER_ID" jdbcType="VARCHAR" property="singgerId" />
+    <result column="SINGGER_NAME" jdbcType="VARCHAR" property="singgerName" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="ENGLISHNAME" jdbcType="VARCHAR" property="englishname" />
+    <result column="NAME_PINYIN" jdbcType="VARCHAR" property="namePinyin" />
+    <result column="SINGGER_INI" jdbcType="VARCHAR" property="singgerIni" />
+    <result column="FORMER_NAME" jdbcType="VARCHAR" property="formerName" />
+    <result column="ANOTHER_NAME" jdbcType="VARCHAR" property="anotherName" />
+    <result column="NICK_NAME" jdbcType="VARCHAR" property="nickName" />
+    <result column="ACTIVE_YEARS" jdbcType="VARCHAR" property="activeYears" />
+    <result column="SINGGER_PCI_S" jdbcType="VARCHAR" property="singgerPciS" />
+    <result column="SINGGER_PCI_M" jdbcType="VARCHAR" property="singgerPciM" />
+    <result column="SINGGER_PCI_L" jdbcType="VARCHAR" property="singgerPciL" />
+    <result column="SIMILAR_SINGGER" jdbcType="VARCHAR" property="similarSingger" />
+    <result column="COMPANY" jdbcType="VARCHAR" property="company" />
+    <result column="COUNTRY" jdbcType="VARCHAR" property="country" />
+    <result column="NATION" jdbcType="VARCHAR" property="nation" />
+    <result column="BIRTH_DATE" jdbcType="VARCHAR" property="birthDate" />
+    <result column="BIRTH_PLACE" jdbcType="VARCHAR" property="birthPlace" />
+    <result column="SCHOOL" jdbcType="VARCHAR" property="school" />
+    <result column="REPRESENT_WORKS" jdbcType="CLOB" property="representWorks" />
+    <result column="HEIGHT" jdbcType="VARCHAR" property="height" />
+    <result column="WEITHT" jdbcType="VARCHAR" property="weitht" />
+    <result column="BLOOD_TYPE" jdbcType="VARCHAR" property="bloodType" />
+    <result column="HOBBY" jdbcType="VARCHAR" property="hobby" />
+    <result column="INSTRUMENT" jdbcType="VARCHAR" property="instrument" />
+    <result column="AWARDS" jdbcType="CLOB" property="awards" />
+    <result column="IDOL" jdbcType="VARCHAR" property="idol" />
+    <result column="LOVER" jdbcType="VARCHAR" property="lover" />
+    <result column="INTRO" jdbcType="CLOB" property="intro" />
+    <result column="SINGGER_TYPE" jdbcType="VARCHAR" property="singgerType" />
+    <result column="SINGGER_AREA" jdbcType="VARCHAR" property="singgerArea" />
+    <result column="SINGGER_STYLE" jdbcType="VARCHAR" property="singgerStyle" />
+    <result column="SINGGER_LEVEL" jdbcType="VARCHAR" property="singgerLevel" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="SINGGER_PCI_S_DIR" jdbcType="VARCHAR" property="singgerPciSDir" />
+    <result column="SINGGER_PCI_M_DIR" jdbcType="VARCHAR" property="singgerPciMDir" />
+    <result column="SINGGER_PCI_L_DIR" jdbcType="VARCHAR" property="singgerPciLDir" />
+    <result column="VERSION_NUMBER_SEQ" jdbcType="DECIMAL" property="versionNumberSeq" />
+    <result column="CONSTELLATION" jdbcType="VARCHAR" property="constellation" />
+    <result column="DEATHDATE" jdbcType="VARCHAR" property="deathdate" />
+    <result column="GROUP_CREATE_DATE" jdbcType="VARCHAR" property="groupCreateDate" />
+    <result column="GROUP_DISMISS_DATE" jdbcType="VARCHAR" property="groupDismissDate" />
+    <result column="ARTIST_IN_GROUP" jdbcType="VARCHAR" property="artistInGroup" />
+    <result column="GROUP_ARTIST" jdbcType="VARCHAR" property="groupArtist" />
+    <result column="PRIMITIVE_NAME" jdbcType="VARCHAR" property="primitiveName" />
+    <result column="LOCAL_COLOR" jdbcType="VARCHAR" property="localColor" />
+  </resultMap>
+  <delete id="deleteByUniqueKey" parameterType="java.lang.String">
+    delete from CH_T_SINGGER_INFO
+    where SINGGER_ID = #{singgerId,jdbcType=VARCHAR}
+  </delete>
+  <select id="selectByUniqueKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select SINGGER_ID, SINGGER_NAME, STATUS, GENDER, ENGLISHNAME, NAME_PINYIN, SINGGER_INI, 
+    FORMER_NAME, ANOTHER_NAME, NICK_NAME, ACTIVE_YEARS, SINGGER_PCI_S, SINGGER_PCI_M, 
+    SINGGER_PCI_L, SIMILAR_SINGGER, COMPANY, COUNTRY, NATION, BIRTH_DATE, BIRTH_PLACE, 
+    SCHOOL, REPRESENT_WORKS, HEIGHT, WEITHT, BLOOD_TYPE, HOBBY, INSTRUMENT, AWARDS, IDOL, 
+    LOVER, INTRO, SINGGER_TYPE, SINGGER_AREA, SINGGER_STYLE, SINGGER_LEVEL, CREATE_TIME, 
+    SINGGER_PCI_S_DIR, SINGGER_PCI_M_DIR, SINGGER_PCI_L_DIR, VERSION_NUMBER_SEQ, CONSTELLATION, DEATHDATE, 
+    GROUP_CREATE_DATE, GROUP_DISMISS_DATE, ARTIST_IN_GROUP,GROUP_ARTIST, PRIMITIVE_NAME, LOCAL_COLOR
+    from CH_T_SINGGER_INFO
+    where SINGGER_ID = #{singgerId,jdbcType=VARCHAR}
+  </select>
+</mapper>
