@@ -1,84 +1,24 @@
 package com.priva.tango.test;
 
 import java.math.BigDecimal;
+import java.sql.Array;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Test {
 	static int i = 2;
 	public static void main(String[] args) throws ParseException {
-		double a = 1.2d;
-		double b = 0.2d;
-		System.out.println(a/b);
+		List<String> l1 = new ArrayList<String>();
+		l1.add("1");
+		l1.add("2");
 
-		BigDecimal c = new BigDecimal(1.2);
-		BigDecimal d = new BigDecimal(0.2);
-		System.out.println(c.divide(d, 0, BigDecimal.ROUND_UP));
-	}
-	
-	static void add(Integer i) {
-		i=i+1;
-	}
-	
-	void ifelse() {
-		if(i==1) {
-			
-		}else if(i==2) {
-			System.out.println(111);
-		}
-	}
-	
-	void ifelse2() {
-		if(i==1) {
-			
-		}
-		else 
-		if(i==2) {
-			System.out.println(111);
-		}
-	}
-	
-	void ifelse3() {
-		if(i==1) {
-			
-		}
-		else 
-		if(i==2) 
-			System.out.println(111);
+		List<String> l2 = new ArrayList<String>();
+		l2.add("1");
+
+		System.out.println(l1.containsAll(l2));
+
 	}
 }
 
-
-class F {
-	private String id;
-	private String plain;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getPlain() {
-		return plain;
-	}
-	public void setPlain(String plain) {
-		this.plain = plain;
-	}
-}
-
-class D extends F{
-	private String id;
-	private String name;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-}

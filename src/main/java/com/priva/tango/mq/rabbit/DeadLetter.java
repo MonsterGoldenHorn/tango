@@ -22,9 +22,12 @@ public class DeadLetter {
         //正常交换机设置死信交换机
         Map<String, Object> params = new HashMap<>();
         params.put("x-message-ttl", 1000);
-        params.put("x-max-length", 10);//队列中超过10个直接入死信
-        params.put("x-dead-letter-exchange", death);//交换机
-        params.put("x-dead-letter-routing-key", "deathRouting");//死信队列路由
+        //队列中超过10个直接入死信
+        params.put("x-max-length", 10);
+        //交换机
+        params.put("x-dead-letter-exchange", death);
+        //死信队列路由
+        params.put("x-dead-letter-routing-key", "deathRouting");
         //正常队列机声明
         channel.queueDeclare("normal", false, false, false, params);
         //死信队列机声明

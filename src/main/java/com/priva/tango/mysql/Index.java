@@ -5,9 +5,16 @@ public class Index {
      * 1.主键（唯一非空）
      * 2.唯一索引
      * 3.普通索引
-     * 4.全文索引
+     * 4.全文索引  只能在MyISAM数据表中创建
+     *  添加 ALTER TABLE article ADD FULLTEXT INDEX fulltext_article(title,content)
      *  fullText ([col])
      *  match([col]) against ('xxxx' IN [MODE] mode )
+     *  MySql自带的全文索引只能用于数据库引擎为MYISAM的数据表，如果是其他数据引擎，则全文索引不会生效。
+     *  此外，MySql自带的全文索引只能对英文进行全文检索，目前无法对中文进行全文检索。如果需要对包含中文在
+     *  内的文本数据进行全文检索，我们需要采用Sphinx（斯芬克斯）/Coreseek技术来处理中文
+     *
+     *  innodb也能创建全文索引
+     *
      * 5.组合索引
      * 只对唯一键建索引
      *
@@ -80,7 +87,7 @@ public class Index {
      *
      *
      * undo
-     * 保存了事务发生之前的数据的一个版本，可以用于回滚，同时可以提供多版本并发控制下的读（MVCC），也即非锁定读
+     * 保存了事务发生之前的数据的多个版本，可以用于回滚，同时可以提供多版本并发控制下的读（MVCC），也即非锁定读
      *
      */
     /**
@@ -88,5 +95,10 @@ public class Index {
      * 1.复合索引最左没有
      * 2.like "%231"
      * 3.range搜索结果预估为30%以上
+     */
+    /**
+     * 执行计划
+     * type:system,const,eq_ref....
+     * https://dev.mysql.com/doc/refman/5.6/en/explain-output.html#explain-join-types
      */
 }
