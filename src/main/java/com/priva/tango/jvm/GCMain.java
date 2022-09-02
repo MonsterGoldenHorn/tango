@@ -28,6 +28,8 @@ public class GCMain {
      * 4.方法区常量引用
      * 5.sync锁住
      * 6.虚拟机内部引用
+     *
+     * yourkit 工具可以查看
      */
     /**
      * 标记清除
