@@ -10,8 +10,6 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 
-import sun.misc.IOUtils;
-import sun.nio.ch.IOUtil;
 
 public class ChannelMain {
 	public static void main(String[] args) throws IOException {

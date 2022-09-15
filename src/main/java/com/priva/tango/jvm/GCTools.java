@@ -29,6 +29,10 @@ public class GCTools {
      * Tomcat则直接加在JAVA_OPTS变量里
      *
      * 如果是频繁gc基本上通过内存扩容，如果内存比较大，可以考虑换g1
+     *
+     * 线程数计算
+     * CPU总核数 = 物理CPU个数 * 每颗物理CPU的核数
+     * 总逻辑CPU数 = 物理CPU个数 * 每颗物理CPU的核数 * 超线程数
      */
     /**
      * 日志分析工具（-Xloggc:./log/gc.log 针对这个日志文件）

@@ -34,7 +34,7 @@ public class MapReduceMain {
 		}
 		System.out.println(double2);
 		st.stop();
-		
+
 		st.start("good for loop");
 		Double double3 = 0d;
 		for (Goods goods2 : list) {

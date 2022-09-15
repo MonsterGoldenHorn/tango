@@ -10,8 +10,12 @@ import java.lang.reflect.Proxy;
 
 public class ProxyMode {
 /**
- * 
- * 方法增强，控制
+ *
+ * 代理模式的定义：为其他对象提供一种代理以控制对这个对象的访问。在某些情况下，
+ *      一个对象不适合或者不能直接引用另一个对象，而代理对象可以在客户端和目标对象之间起到中介的作用
+ *
+ * 1）方法增强，控制：aop，和适配器不同的是，适配器进行了扩展，比如修改了参数，代理是直接调用
+ * 2）无法直接访问对象：rpc框架种，编写代码时无法确定服务地址（确定ip时也不是不可以）
  * 
  * 静态与动态代理基于接口
  * 静态直接持有目标对象（创建代理时传入）
@@ -25,8 +29,9 @@ public class ProxyMode {
  *
  * 静态
  * soap的consumerService，代理所有类型的soapSerivce处理，统一添加日志和处理大表版权
- * 
- *  1、远程代理。
+ *
+ *
+ *  1、远程代理。rpc各种框架
  *  2、虚拟代理。
  *  3、Copy-on-Write 代理。
  *  4、保护（Protect or Access）代理。
@@ -92,7 +97,7 @@ class StaticProxy implements ITeacher{
         System.out.println("静态代理结束");
     }
 }
-//动态代理类JDK代理
+//动态代理类JDK代理，与静态代理相比同样需要接口实现，不同的是静态代理直接调用，动态代理基于反射
 class DynamicProxy{
     private Object target;
     public DynamicProxy(Object target){
@@ -107,6 +112,7 @@ class DynamicProxy{
                         System.out.println("动态代理开始");
                         Object o = null;
                         try {
+                            //基于反射调用实际方法
                             o = method.invoke(target, args);
                         } catch (Exception e) {
                             if(e.getLocalizedMessage().contains("1")){
@@ -121,9 +127,12 @@ class DynamicProxy{
     }
 }
 
-//cglib动态代理
+//cglib动态代理与jdk动态代理比，不需要实现接口
 class CglibProxy implements MethodInterceptor{
     private Object target;
+    /**
+     * 这个构造器没有实际意义，实际上只要传入接口class就可以
+     */
     public CglibProxy(Object target){
         this.target = target;
     }
