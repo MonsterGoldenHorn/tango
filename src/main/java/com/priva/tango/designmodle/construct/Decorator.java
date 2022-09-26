@@ -1,20 +1,26 @@
 package com.priva.tango.designmodle.construct;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 public class Decorator {
 /**
- * 桥接两头一边创建一边行为，装饰两边实现相同的行为
- * wrapper
- * 
+ * 装饰器模式
+ * 也叫包装模式wrapper  IO流中的包装
+ *
+ *  与代理区别，代理是控制并且增强，装饰器只为增强
+ *
  * 特征，装饰者包含了一个被装饰的对象，两者都继承自一个超类(抽象)
- * 
+ *
+ * 桥接两头一边创建一边行为，装饰两边实现相同的行为
+ *
  * 一个策略可以有自己特定的接口，而装饰的接口则必须与组件的接口一致
  * D e c o r a t o r模式不同于A d a p t e r模式，因为装饰仅改变对象的职责而不改变它的接口；而适配器将给对象一个全新的接口
  * 可以将装饰视为一个退化的、仅有一个组件的组合。然而，装饰仅 给对象添加一些额外的职责—它的目的不在于对象聚集
  * 
  * 用一个装饰你可以改变对象的外表；而 S t r a t e g y模式使得你可以改变对象的内核。这是改变对象的两种途径
- * 
- * 
- * 
+ *
  */
     
     
@@ -25,7 +31,6 @@ public class Decorator {
         d = new Sugar(d);
         d = new Ice(d);
         System.out.println(d.price());
-        
     }
 }
 

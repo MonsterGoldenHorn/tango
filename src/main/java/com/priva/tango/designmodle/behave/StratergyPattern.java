@@ -11,7 +11,7 @@ public class StratergyPattern {
  * 
  */
 }
-//1.通过金额调整类中的计费策略
+//1.通过金额调整类中的计费策略 内部选择算法这他妈属于状态模式了
 //public void setPriceCode(int priceCode) {  
 //    switch (priceCode) {  
 //    case REGULAR:  

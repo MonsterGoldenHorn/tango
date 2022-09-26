@@ -7,9 +7,13 @@ public class FacadeMode {
  * 
  * 还可以统一管理访问层次，重新组合定义流程
  * <important>
- * 1、为复杂的模块或子系统提供外界访问的模块。 2、子系统相对独立。 3、预防低水平人员带来的风险
+ * 1、为复杂的模块或子系统提供外界访问的模块。
+ * 2、子系统相对独立。
+ * 3、预防低水平人员带来的风险
+ *
  * 也叫过程模式
- * 
+ *
+ * 现实中的政务大厅，简化流程
  * 
  * mybatis Configuration
  * org.springframework.jdbc.support.JdbcUtils
