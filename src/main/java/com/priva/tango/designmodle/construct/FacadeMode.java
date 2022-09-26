@@ -2,6 +2,9 @@ package com.priva.tango.designmodle.construct;
 
 public class FacadeMode {
 /**
+ *
+ * 简化子系统各个跨业务之间的调用，引入外观模式客户端进行流程操作
+ *
  * 比如说子系统垂直领域用户注册，审批有一个流程
  * 现在有需求要直接让用户通过审批，建立一个外观类，直接走完所有流程 
  * 
