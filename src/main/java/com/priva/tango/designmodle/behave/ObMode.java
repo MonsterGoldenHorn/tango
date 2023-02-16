@@ -27,9 +27,9 @@ S i n g l e t o n (3 . 5): ChangeManager可使用S i n g l e t o n模式来保�
         SportNewsCenter snc = new SportNewsCenter();
         Observer ob1 = new PaperPart();
         Observer ob2 = new WebPart();
-        snc.regesiter(ob1);
-        snc.regesiter(ob2);
-        snc.recieve();
+        snc.regisiter(ob1);
+        snc.regisiter(ob2);
+        snc.receive();
     }
 }
 
@@ -39,8 +39,8 @@ interface Observer{
 }
 
 interface Subjct{
-    void recieve();
-    void regesiter(Observer ob);
+    void receive();
+    void regisiter(Observer ob);
     void remove(Observer ob);
     void notfy();
 }
@@ -48,13 +48,13 @@ interface Subjct{
 class SportNewsCenter implements Subjct{
     List<Observer> list = new ArrayList<Observer>();
     @Override
-    public void recieve() {
+    public void receive() {
         System.out.println("收到最新消息");
         this.notfy();
     }
 
     @Override
-    public void regesiter(Observer ob) {
+    public void regisiter(Observer ob) {
         list.add(ob);
     }
 
