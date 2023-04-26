@@ -5,9 +5,23 @@ public class Transaction {
      * spring.factories
      * EnableAutoConfiguration下的
      * TransactionAutoConfiguration
-     * 在autoConfig的处理中会加载selector
-     * 进而处理TransactionManagementConfigurationSelector
+         * 如果是用@EnableTransactionManagement会在autoConfig的处理中会加载selector
+         * 进而处理TransactionManagementConfigurationSelector
      *.....
+     * 自动配置下PlatformTransactionManager具体的实现类，默认JdbcTransactionManager,自定义数据源则为DataSourceTransactionManager 将数据源传入到管理器中TransactionTemplate
+     * 具体方法调用到事务由BeanPostProcessor 实现类AbstractAutoProxyCreator#postProcessAfterInitialization
+     * wrapIfNecessary 创建类事务的代理类
+     * 子类AbstractAdvisorAutoProxyCreator 会找所有的切面进行方法
+     *
+     * TransactionAnnotationParser实现类SpringTransactionAnnotationParser
+     *
+     * SpringTransactionAnnotationParser#parseTransactionAnnotation
+     * 解析注解中的配置生成 RuleBasedTransactionAttribute rbta
+     *
+     * 将解析出来的放到TransactionInterceptor
+     * 在cglib代理了bean后执行method时进行事务以及其他拦截
+     *
+     * ......
      * 在getTransaction方法中  ->PlatformTransactionManager#getTransaction(org.springframework.transaction.TransactionDefinition)
      * 判断当前是否有事务
      */

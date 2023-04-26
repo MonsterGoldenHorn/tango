@@ -10,7 +10,7 @@ public class Test {
 
             }
             for (int i = 0; i < 10000; i++) {
-                //cglib创建对象会放到方法区
+                //cglib创建对象会放到方法区,可以观察到该区域变大
                 BeanGenerator generator = new BeanGenerator();
                 generator.addProperty("id", Object.class);
                 Object obj = generator.create();
