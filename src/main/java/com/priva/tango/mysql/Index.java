@@ -11,7 +11,11 @@ public class Index {
      *  match([col]) against ('xxxx' IN [MODE] mode )
      *  MySql自带的全文索引只能用于数据库引擎为MYISAM的数据表，如果是其他数据引擎，则全文索引不会生效。
      *  此外，MySql自带的全文索引只能对英文进行全文检索，目前无法对中文进行全文检索。如果需要对包含中文在
-     *  内的文本数据进行全文检索，我们需要采用Sphinx（斯芬克斯）/Coreseek技术来处理中文
+     *  内的文本数据进行全文检索，我们需要采用 Sphinx（斯芬克斯）/Coreseek技术来处理中文
+     *
+     *  es 支持中文检索
+     *  mongo 需要插件
+     *  mysql 需要插件
      *
      *  innodb也能创建全文索引
      *
