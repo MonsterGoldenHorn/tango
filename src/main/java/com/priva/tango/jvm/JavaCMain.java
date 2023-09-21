@@ -125,6 +125,9 @@ public class JavaCMain {
      * 方法体中所有方法都是执行的指令加上代码member的引用
      * 所有代码的ascii码转换成16进制保存到class文件中
      *
+     * 解析时通过本方法加载@Data
+     *  annotationProcessingOccurred = procEnvImpl.doProcessing(roots, classSymbols, pckSymbols, deferredDiagnosticHandler);
+     *
      * class文件结构：
      * 描述，版本，常量池，方法指令集合，class文件的16进制转换对应的code代码可反编译
      *
