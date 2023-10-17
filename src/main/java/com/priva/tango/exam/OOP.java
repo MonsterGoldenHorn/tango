@@ -20,4 +20,39 @@ public class OOP {
      * 惯用法:  语言相关  是最低层的模式，关注软件系统的设计与实现，实现时通过某种特定的程序设计语言来描述构件与构件之间的关系。每种编程语言都有它自己特定的模式，即语
      *  言的惯用法。例如引用-计数就是C++语言中的一种惯用法
      */
+    /**
+     * 面向对象设计
+     *
+     * 创建型模式
+     * Factory Method     动态生产对象
+     * Abstract Factory     生产系列对象
+     * Builder              复杂对象构造
+     * Prototype            克隆
+     * Singleton            d单实例
+     *
+     * 结构性模式
+     * Adapter              转换接口
+     * Bridge               继承树拆分
+     * Composite            树形目录结构
+     * Decorator            动态附加职责
+     * Facade               对外统一接口
+     * Flyweight            汉字编码
+     * Proxy                快捷方式
+     *
+     * 行为模式
+     * Chain of responsibility      传递职责
+     * Command                  日志记录，可撤销
+     * Interpreter              虚拟机机制
+     * Iterator                 数据集
+     * Mediator                 不直接引用
+     * Memento                  游戏存档
+     * Observer                 订阅，广播，联动
+     * State                    状态变成类
+     * Strategy                 多方案切换
+     * Template Method          框架
+     * Visitor                  数据与操作分离
+     *
+     *
+     *
+     */
 }
