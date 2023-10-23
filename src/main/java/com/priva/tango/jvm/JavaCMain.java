@@ -133,6 +133,6 @@ public class JavaCMain {
      *
      */
     public static void main(String[] args) throws Exception {
-        Main.main(new String[]{"java文件全路径"});
+        Main.main(new String[]{"D:\\git\\tango\\src\\main\\java\\com\\priva\\tango\\clang\\ClangFormat.java"});
     }
 }

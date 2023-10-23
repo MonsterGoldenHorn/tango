@@ -42,4 +42,8 @@ public class ClangFormat {
         int s = i + k + f;
         return k;
     }
+
+    private synchronized static void print(){
+        System.out.println("ssa");
+    }
 }
