@@ -95,10 +95,15 @@ public class Middleware {
      */
     /*J2EE*/
     /**
-     * J2EE
+     * >>容器  APPLICATION CONTAINER ,APPLET ~,WEB ~, EJB ~
+     * >>组件  APPLET、SERVLET、JSP、EJB、APPLICATION CLIENT
+     * >> 服务
      1、JDBC:（Java Data Base Connectivity,java数据库连接）
      2、JNDI：(Java Naming and Directory Interface,Java命名和目录接口)
      3、EJB：（Enterprise Java Beans，企业级Java Beans）
+            会话bean  客户端服务端
+            实体bean  orm
+            消息驱动bean 异步会话bean
              EJB是实现分布式业务逻辑的Java组件。它以一个标准自动处理了如数据持久化、事务集成、安全对策等问题，为后台业务提供了一个标准方式。“企业”
                 意味着应用的扩展性、可用性、可靠性、安全性、事务性和分布性。
              EJB优点：
