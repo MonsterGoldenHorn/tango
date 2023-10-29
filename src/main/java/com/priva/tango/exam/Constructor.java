@@ -1,5 +1,10 @@
 package com.priva.tango.exam;
 
+import org.checkerframework.checker.units.qual.C;
+import org.springframework.ui.Model;
+
+import javax.swing.text.html.CSS;
+
 /**
  * @description
  * @date 2023/10/17 13:48
@@ -244,11 +249,19 @@ public class Constructor {
      * >>bs   浏览器
      * 混合模式，对内cs，对外bs
      *>>>三层bs
-     *      表现层  mvc->mpv->mvvm   mvc时期v与m耦合，mpv解耦
+     * 层次式
+     */
+     /*层次式系统架构*/
+    /**
+     *      表现层
+     *          设计模式： mvc->mpv->mvvm   mvc时期v与m耦合，mpv解耦
      *              >> mvvm
      *              View ：html，CSS，模板文件
      *              ViewModel : Js , runtime, compler
      *              Model： Java／C＃业务逻辑处理
+     *          XML
+     *          UIP 是微软社区开发的众多ApplicationBlock中的其中之一，它是开源的用于简化用户界面与商业逻辑代码的分离的方法,
+     *              可以用它来写复杂的用户界面导航和工作流处理，并且它能够复用在不同的场景、并可以随着应用的增加而进行扩展
      *      中间层  service
      *      数据访问层  orm
      *      数据架构层   DBMS
@@ -257,8 +270,9 @@ public class Constructor {
      * SOA
      * 基于服务架构，主要想集成
      * 特点: 松散耦合，粗粒度，标准化接口
-     * 实现方式：webservice   服务请求者，服务提供者，服务注册中心       请求者查询注册中心服务后直接与提供者通信
-     *          esb         请求与提供者解耦
+     * 实现方式：webservice   注册表模式，服务请求者，服务提供者，服务注册中心       请求者查询注册中心服务后直接与提供者通信
+     *          微服务        微服务模式
+     *          esb          总线模式  请求与提供者解耦
      *                  提供位置透明性的消息路由和寻址服务
      *                  提供服务注册和命名的管理功能
      *                  支持多种的消息传递范型
